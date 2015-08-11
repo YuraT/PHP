@@ -31,12 +31,12 @@ else {
 
 $res = $db->query("SELECT * FROM months");
 
-echo "<ul>";
+echo "<table>";
 $res->data_seek(0);
 while ($row = $res->fetch_assoc()) {
-    echo "<li>" . "month =" . " " . $row["month"] . " | " . "number of days: " . $row["number_of_days"] . "\n" . "</li>";
+    echo "<tr>" . "<td>" . "month =" . " " . $row["month"] . "</td>" . "<td>" . "number of days: " . $row["number_of_days"] . "\n" . "</td>" . "</tr>";
 }
-echo "</ul>";
+echo "</table>";
 ?>
     </body>
 </html>
