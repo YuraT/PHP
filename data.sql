@@ -1,12 +1,16 @@
-INSERT INTO months VALUES (1, "January", 31);
-INSERT INTO months VALUES (2, "February", 28);
-INSERT INTO months VALUES (3, "March", 31);
-INSERT INTO months VALUES (4, "April", 30);
-INSERT INTO months VALUES (5, "May", 31);
-INSERT INTO months VALUES (6, "June", 30);
-INSERT INTO months VALUES (7, "July", 31);
-INSERT INTO months VALUES (8, "August", 31);
-INSERT INTO months VALUES (9, "September", 30);
-INSERT INTO months VALUES (10, "October", 31);
-INSERT INTO months VALUES (11, "November", 30);
-INSERT INTO months VALUES (12, "December", 30);
+DROP TABLE months;
+
+CREATE TABLE months (id INTEGER PRIMARY KEY AUTO_INCREMENT, month TEXT, number_of_days INTEGER, season TEXT);
+
+INSERT INTO months (month, number_of_days, season) VALUES ("January", 31, "Winter");
+INSERT INTO months (month, number_of_days, season) VALUES ("February", 28, "Winter");
+INSERT INTO months (month, number_of_days, season) VALUES ("March", 31, "Spring");
+INSERT INTO months (month, number_of_days, season) VALUES ("April", 30, "Spring");
+INSERT INTO months (month, number_of_days, season) VALUES ("May", 31, "Spring");
+INSERT INTO months (month, number_of_days, season) VALUES ("June", 30, "Summer");
+INSERT INTO months (month, number_of_days, season) VALUES ("July", 31, "Summer");
+INSERT INTO months (month, number_of_days, season) VALUES ("August", 31, "Summer");
+INSERT INTO months (month, number_of_days, season) VALUES ("September", 30, "Fall");
+INSERT INTO months (month, number_of_days, season) VALUES ("October", 31, "Fall");
+INSERT INTO months (month, number_of_days, season) VALUES ("November", 30, "Fall");
+INSERT INTO months (month, number_of_days, season) VALUES ("December", 31, "Winter");

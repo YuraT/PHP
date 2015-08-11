@@ -1,6 +1,8 @@
 <!doctype <!DOCTYPE html>
 <html>
     <head>
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="style.css" type="text/css" />
         <title>PHP</title>
     </head>
     
@@ -11,7 +13,7 @@
 // then click the URL that is emitted to the Output tab of the console
 
 
-echo '<h1>Hello World</h1>';
+echo '<h1>About Months</h1>';
 
 $servername = getenv("IP");
 $username = getenv ("C9_USER");
@@ -31,10 +33,10 @@ else {
 
 $res = $db->query("SELECT * FROM months");
 
-echo "<table>";
+echo "<table border=1>";
 $res->data_seek(0);
 while ($row = $res->fetch_assoc()) {
-    echo "<tr>" . "<td>" . "month =" . " " . $row["month"] . "</td>" . "<td>" . "number of days: " . $row["number_of_days"] . "\n" . "</td>" . "</tr>";
+    echo "<tr>" . "<td>" . $row["id"] . "</td>" . "<td>" . $row["season"] . "</td>" . "<td>" . "month =" . " " . $row["month"] . "</td>" . "<td>" . "number of days: " . $row["number_of_days"] . "\n" . "</td>" . "</tr>";
 }
 echo "</table>";
 ?>
