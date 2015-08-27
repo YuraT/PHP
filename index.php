@@ -1,6 +1,7 @@
 <!doctype <!DOCTYPE html>
 <html>
     <head>
+        <link href='http://fonts.googleapis.com/css?family=Corben:700' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="style.css" type="text/css" />
         <title>PHP</title>
