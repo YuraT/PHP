@@ -1,13 +1,17 @@
 table {
     border-collapse: collapse;
-    /*font-family: 'Lobster', cursive;*/
+    font-family: 'Lobster', cursive;
 }
 
 h1 {
     color: #F77;
-    /*font-family: 'Corben', cursive;*/
+    font-family: 'Corben', cursive;
 }
 
 body {
     background-color: azure;
+}
+
+p {
+    font-family: 'Slabo 27px', serif;
 }
