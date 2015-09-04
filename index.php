@@ -32,5 +32,14 @@
         }
         echo "</table>";
         ?>
+        <br />
+        <br />
+        <br />
+        
+        <form action="notes.php" method="post">
+            <input type="text" name="username" placeholder="username" />
+            <input type="password" name="password" placeholder="password"/>
+            <input type="submit" value="Log In" />
+        </form>
     </body>
 </html>
