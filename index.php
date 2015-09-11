@@ -36,10 +36,16 @@
         <br />
         <br />
         
-        <form action="notes.php" method="post">
+        <h2>Log In</h2>
+        <form action="login.php" method="post">
             <input type="text" name="username" placeholder="username" />
             <input type="password" name="password" placeholder="password"/>
             <input type="submit" value="Log In" />
         </form>
+        
+        <!--<h2>Register</h2>
+        <form>
+            <input type="text" />
+        </form>-->
     </body>
 </html>
