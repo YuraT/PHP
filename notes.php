@@ -1,28 +1,21 @@
 <html>
     <body>
         <?php
-            $servername = getenv("IP");
-            $username = getenv("C9_USER");
-            $password = "";
-            $database = "c9";
-            $dbport = 3306;
-            
-            $query = null;
-            
-            $pdo = new PDO("mysql:host=" . $servername . ";dbname=" . $database, $username, $password);
+            include_once("function.php");
+            $pdo = connect_pdo();
             $statment = $pdo->query($query);
-            /*$row = $statment->fetch(PDO::FETCH_ASSOC);*/
-            $cookie_user_id = "user_id";
-            $user_id = $_COOKIE[$cookie_user_id];
+            $user_id = $_COOKIE[COOKIE_USER_ID];
             
-            if ($user_id === null) {
+            if (is_null ($user_id) || $user_id === "") {
                 header("Location: index.php");
             }
             else {
                 
                 echo "<br />";
                 
-                echo "Welcome" . " " . $_COOKIE["username"]; 
+                echo "Welcome" . " " . $_COOKIE["username"];
+                
+                echo "<br />";
                 
                 echo "Your id is : " . $user_id . "<br /><br /><br />";
                 
@@ -42,5 +35,9 @@
                 echo "</ol>";
             }
         ?>
+        
+        <form action="Out.php" method="post">
+            <input type="submit" value="Sign Out">
+        </form>
     </body>
 </html>
