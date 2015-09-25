@@ -1,26 +1,24 @@
 <?php
     include_once("function.php");
     $pdo = connect_pdo();
+    echo $_POST["id"];
     
-    if($_COOKIE[COOKIE_USER_ID] === null) {
+    /*if($_COOKIE[COOKIE_USER_ID] === null) {
         echo "ERROR: user id not found" . "<br />" . "Try again";
-    }
-    else {
-        try {
-            $user_id = $_COOKIE[COOKIE_USER_ID];
-            $query = "INSERT INTO notes (user_id, notes_text) VALUES(:user_id, :notes_text)";
+    }*/
+    //else {
+        // try {
+            $query = "DELETE from notes Where ID = :ID";
             $statment = $pdo->prepare($query);
-            $statment->bindParam(":user_id", $user_id, PDO::PARAM_INT);
-            $statment->bindParam(":notes_text", $_POST['new_note'], PDO::PARAM_STR, 250);
-
+            $statment->bindParam(":ID", $_POST['id'], PDO::PARAM_INT);
             
             if($statment->execute()) {
-                echo "Note has been added: ";
+                echo "Note has been deleted: ";
             }
             
             
             
-            echo $_POST["new_note"];
+        /*    echo $_POST["new_note"];
             
             echo "<br />";
             
@@ -28,8 +26,8 @@
         }
         catch (PDOException $e) {
             trigger_error("Error occured while trying to add the note: " . $e->getMessage(), E_USER_ERROR);
-        }
+        }*/
         
-        header("Location: notes.php");
-    }
+       header("Location: notes.php");
+    //}
 ?>

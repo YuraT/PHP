@@ -30,7 +30,7 @@
                 
                 echo "<ol>";
                 while ($row = $statment->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<li>" . $row["notes_text"] . "</li>";
+                    echo "<li>" . $row["notes_text"] . '<form action="delete_note.php" method="post"><input type="submit" value="delete" /><input type="hidden" name="id" value="' . $row["ID"] . '"></form>' .     "</li>";
                 }
                 echo "</ol>";
             }

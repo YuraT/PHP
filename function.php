@@ -1,7 +1,7 @@
 <?php
 
-define ("COOKIE_USER_ID", "user_id");
-define ("COOKIE_USERNAME", "username");
+    define ("COOKIE_USER_ID", "user_id");
+    define ("COOKIE_USERNAME", "username");
     function delete_user_info () {
             setcookie(COOKIE_USER_ID, null, time() - 18000, "/");
             setcookie(COOKIE_USERNAME, null, time() - 18000, "/");
@@ -16,7 +16,6 @@ define ("COOKIE_USERNAME", "username");
         $password = "";
         $database = "c9";
         $dbport = 3306;
-        
         $pdo = new PDO("mysql:host=" . $servername . ";dbname=" . $database, $username, $password);
         return($pdo);
     }

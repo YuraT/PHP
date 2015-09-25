@@ -36,9 +36,12 @@
             <input type="submit" value="Log In" />
         </form>
         
-        <!--<h2>Register</h2>
-        <form>
-            <input type="text" />
-        </form>-->
+        <h2>Register</h2>
+        <form action="register.php" method="post">
+            <input type="text" name="name" placeholder="username" />
+            <input type="password" name="password" placeholder="password" />
+            <input type="password" name="password_repeat" placeholder="repeat password" />
+            <input type="submit" value="Register" />
+        </form>
     </body>
 </html>
