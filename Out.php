@@ -5,7 +5,7 @@
             
             delete_user_info();
             
-             header("Location: notes.php");
+            header("Location: notes.php");
         ?>
     </body>
 </html>
