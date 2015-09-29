@@ -34,10 +34,23 @@
                 }
                 echo "</ol>";
             }
+            echo "<br />" . "<br />" . "<br />" . "<br />" . '<form action=delete_user.php method="post"><input type="submit" value="DELETE USER" /></form>';
         ?>
         
+        <br />
+        <br />
+        <br />
+        <br />
+        
         <form action="Out.php" method="post">
-            <input type="submit" value="Sign Out">
+            <input type="submit" value="Sign Out" />
         </form>
+        
+        <form action="delete_all.php" method="post">
+            <input id="delete_all" type="submit" value="Delete all notes"/>
+        </form>
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="app.js"></script>
     </body>
 </html>

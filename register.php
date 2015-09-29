@@ -17,4 +17,5 @@
     if($statment->execute()) {
         echo "registred account: " . $_POST['name'];
     }
+    echo "<button>Go Back" . header("Location: index.php") . "</button>";
 ?>

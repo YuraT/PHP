@@ -6,7 +6,6 @@
             setcookie(COOKIE_USER_ID, null, time() - 18000, "/");
             setcookie(COOKIE_USERNAME, null, time() - 18000, "/");
             echo $_COOKIE[COOKIE_USERNAME];
-            echo "Hello";
             echo COOKIE_USER_ID . $_COOKIE[COOKIE_USER_ID];
     }
     
