@@ -38,9 +38,9 @@
         
         <h2>Register</h2>
         <form action="register.php" method="post">
-            <input type="text" name="name" placeholder="username" />
-            <input type="password" name="password" placeholder="password" />
-            <input type="password" name="password_repeat" placeholder="repeat password" />
+            <input type="text" name="name" placeholder="username" required/>
+            <input type="password" name="password" placeholder="password" required/>
+            <input type="password" name="password_repeat" placeholder="repeat password" required/>
             <input type="submit" value="Register" />
         </form>
     </body>

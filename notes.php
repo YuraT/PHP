@@ -1,4 +1,9 @@
 <html>
+    <head>
+        <title>PHP Notes</title>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    </head>
+    
     <body>
         <?php
             include_once("function.php");
@@ -50,7 +55,17 @@
             <input id="delete_all" type="submit" value="Delete all notes"/>
         </form>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="app.js"></script>
+        <!--<div id="dialog-confirm" title="Empty the recycle bin?">-->
+        <!--    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>-->
+        <!--</div>-->
+        
+        <form action="rename_user.php" method="post">
+            <input type="text" name="new_name" placeholder="rename_user" />
+            <input type="submit" value="rename" />
+        </form>
+        
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->
+        <!--<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>-->
+        <!--<script src="app.js"></script>-->
     </body>
 </html>

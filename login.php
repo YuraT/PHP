@@ -3,8 +3,10 @@
         <?php
             include_once("function.php");
             $pdo = connect_pdo();
+            $hash_password = "";
+            $hash_password = hash("sha256", $_POST["password"]);
             
-            $query = "SELECT * FROM users WHERE username = '" . $_POST["username"] . "' and password='" . $_POST["password"] . "'";
+            $query = "SELECT * FROM users WHERE username = '" . $_POST["username"] . "' and password='" . $hash_password . "'";
             
             $statment = $pdo->query($query);
             $row = $statment->fetch(PDO::FETCH_ASSOC);
