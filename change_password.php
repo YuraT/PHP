@@ -1,5 +1,7 @@
 <?php
-    
+    $hash_password = "";
+    $hash_password = hash("sha256", $_POST["password"]);
+
     if ($_COOKIE["user_id"] === null) {
         echo "Please login again";
     }
@@ -15,16 +17,21 @@
     else {
         include_once("function.php");
         $pdo = connect_pdo();
-        // $statment = $pdo->query($query);
-    
-        echo "hi";
-        $query = "SELECT * FROM users WHERE ID = :id";
-        $statment = $pdo->prepare($query);
-        $statment->bindParam(":id", $_COOKIE["user_id"], PDO::PARAM_INT);
+        
+        $user_id = (int)$_COOKIE["user_id"];
+        
+        echo $user_id;
+        $query = "SELECT password FROM users WHERE ID = " . $user_id;
+        $statment = $pdo->query($query);
         
         while ($row = $statment->fetch(PDO::FETCH_ASSOC)) {
-            echo $row["username"];
+            $hash_check = $row["password"];
         }
-        echo "hiiii";
+        
+        if ($hash_password != $hash_check) {
+            echo "old password does not match";
+        }
+        
+        
     }
 ?>
