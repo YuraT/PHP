@@ -21,7 +21,7 @@
                 setcookie(COOKIE_USER_ID, $user_id, time() + 18000);
                 
                 //username cookie
-                $username = $_POST["username"];
+                $username = strtolower($_POST["username"]);
                 setcookie(COOKIE_USERNAME, $username, time() + 18000);
                 
                 header("Location: notes.php");

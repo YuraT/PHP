@@ -8,6 +8,7 @@
         <?php
             include_once("function.php");
             $pdo = connect_pdo();
+            $query = "";
             $statment = $pdo->query($query);
             $user_id = $_COOKIE[COOKIE_USER_ID];
             
@@ -59,9 +60,24 @@
         <!--    <p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>These items will be permanently deleted and cannot be recovered. Are you sure?</p>-->
         <!--</div>-->
         
+        <h2>Rename User</h2>
+        
         <form action="rename_user.php" method="post">
             <input type="text" name="new_name" placeholder="rename_user" />
             <input type="submit" value="rename" />
+        </form>
+        
+        <br />
+        <br />
+        <br />
+        
+        <h2>Change Password</h2>
+        
+        <form action="change_password.php" method="post">
+            <input type="password" name="old_password" placeholder="current password" required />
+            <input type="password" name="new_password" placeholder="new password" required />
+            <input type="password" name="new_password_repeat" placeholder="repeat new password" required />
+            <input type="submit" value="change password" />
         </form>
         
         <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>-->

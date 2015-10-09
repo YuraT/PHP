@@ -5,6 +5,9 @@
     if($_COOKIE[COOKIE_USER_ID] === null) {
         echo "ERROR: user id not found" . "<br />" . "Try again";
     }
+    else if (strlen(trim($_POST["new_note"])) === 0) {
+        header("Location: notes.php");
+    }
     else {
         try {
             $user_id = $_COOKIE[COOKIE_USER_ID];
