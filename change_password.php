@@ -33,7 +33,7 @@
         if ($hash_password != $hash_check) {
             echo "old password does not match";
         }
-        else {
+        else{
             $query = "UPDATE users SET password = '" . $hash_new . "' WHERE ID = " . $user_id;
             $statment = $pdo->prepare($query);
             

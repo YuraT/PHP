@@ -1,8 +1,16 @@
 <?php
     include_once("function.php");
     $pdo = connect_pdo();
+    $query = "select count(*) from users WHERE username = '" . $_POST["name"] . "'";
+    $statment = $pdo->prepare($query);
+    $statment->execute();
     
-    if ($_POST["password"] != $_POST["password_repeat"]) {
+    $username_check = $statment->fetchColumn();
+    
+    if ($username_check > 0) {
+        echo "username already taken";
+    }
+    else if ($_POST["password"] != $_POST["password_repeat"]) {
         echo "passwords don't match";
     }
     else if (strlen(trim($_POST["name"])) === 0 || strlen(trim($_POST["password"])) === 0) {

@@ -19,11 +19,11 @@
                 
                 echo "<br />";
                 
-                echo "Welcome" . " " . $_COOKIE["username"];
+                echo "<h1>Welcome" . " " . $_COOKIE["username"] . "</h1>";
                 
                 echo "<br />";
                 
-                echo "Your id is : " . $user_id . "<br /><br /><br />";
+                echo "<h2>" . "Your id is : " . $user_id . "<br /><br /><br />" . "</h2>";
                 
                 $query = "SELECT * FROM notes WHERE user_ID ='" . $user_id . "'";
                 $statment = $pdo->query($query);
@@ -40,7 +40,7 @@
                 }
                 echo "</ol>";
             }
-            echo "<br />" . "<br />" . "<br />" . "<br />" . '<form action=delete_user.php method="post"><input type="submit" value="DELETE USER" /></form>';
+            echo "<br />" . "<br />" . "<br />" . "<br />" . '<form action=confirm_del_user.php method="post"><input type="submit" value="DELETE USER" /></form>';
         ?>
         
         <br />
@@ -63,7 +63,7 @@
         <h2>Rename User</h2>
         
         <form action="rename_user.php" method="post">
-            <input type="text" name="new_name" placeholder="rename_user" />
+            <input type="text" name="new_name" placeholder="rename_user" required />
             <input type="submit" value="rename" />
         </form>
         
